@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GamePriceCompare - Comparador de Precios</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>🎮 GamePriceCompare</h1>
+      <p class="subtitle">Compara precios de videojuegos en todas las tiendas</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="search-section">
+      <form id="searchForm">
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Buscar un juego..." autocomplete="off">
+          <button type="submit">Buscar</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="loading" class="hidden">
+      <div class="spinner"></div>
+      <p id="loadingText">Buscando precios...</p>
+    </section>
+
+    <section id="error" class="hidden">
+      <p id="errorMsg"></p>
+    </section>
+
+    <section id="gameList" class="hidden">
+      <h2 class="game-list-title">Selecciona un juego</h2>
+      <div id="gameListGrid" class="game-list-grid"></div>
+    </section>
+
+    <section id="results" class="hidden">
+      <button id="backBtn" class="back-btn">&larr; Volver a resultados</button>
+      <div class="game-header">
+        <img id="gameImage" src="" alt="" width="150" height="150">
+        <div class="game-header-info">
+          <h2 id="gameTitle"></h2>
+          <div id="gameDetails"></div>
+        </div>
+      </div>
+
+      <div id="steamPrice" class="steam-price-card hidden">
+        <div class="steam-label">Precio en Steam</div>
+        <div id="steamPriceAmount" class="steam-amount"></div>
+        <div id="steamPriceRegular" class="steam-regular"></div>
+        <div id="steamLowest" class="steam-lowest"></div>
+      </div>
+
+      <div class="price-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Tienda</th>
+              <th>Precio</th>
+              <th>vs Steam</th>
+              <th>Descuento</th>
+              <th>Enlace</th>
+            </tr>
+          </thead>
+          <tbody id="priceTableBody">
+          </tbody>
+        </table>
+      </div>
+
+      <div id="greySection" class="grey-market-section hidden">
+        <h3 class="section-title">Tiendas de Keys (Mercado Gris)</h3>
+        <p class="section-subtitle">G2A, Kinguin, Eneba, GAMIVO, K4G, HRK y mas - precios en EUR</p>
+        <div id="greyMessage" class="grey-message hidden"></div>
+        <div class="price-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Tienda</th>
+                <th>Precio</th>
+                <th>vs Steam</th>
+                <th>Enlace</th>
+              </tr>
+            </thead>
+            <tbody id="greyTableBody">
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Precios oficiales de <a href="https://isthereanydeal.com" target="_blank">IsThereAnyDeal</a> y mercado gris de <a href="https://www.allkeyshop.com" target="_blank">AllKeyShop</a></p>
+    </div>
+  </footer>
+
+  <script src="/js/app.js" defer></script>
+</body>
+</html>
